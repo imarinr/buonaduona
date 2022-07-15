@@ -1,0 +1,13 @@
+<%= form_with model: @product, url: products_path, method: :patch do |f|%>
+    <%= f.label :name, 'Nombre:'%>              <br>
+    <%= f.text_field :name %>                   <br>
+    <%= f.label :description, 'Descripción:'%>  <br>
+    <%= f.text_field :description %>            <br>
+    <%= f.label :price, 'Precio:'%>             <br>
+    <%= f.text_field :price %>                  <br>
+    <%= f.label :stock, 'Stock disponible:'%>   <br>
+    <%= f.number_field :stock, id: 'stock'%>    <br>
+    <%= f.label :available, 'Disponible:'%>     <br>
+    <%= f.check_box :available %>               <br>
+    <%= f.submit "Guardar"%>
+<% end %>

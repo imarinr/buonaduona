@@ -1,0 +1,12 @@
+<h1>Products#index</h1>
+
+<% @products.each do |p| %>
+<p>
+    <strong><%= p.name %></strong><br>
+    <%= p.description %><br>
+    <span>Precio: $<%= p.price %></span><br>
+    <span>Stock disponible: <%= p.stock %> unidades</span><br>
+    <%= link_to "Editar", controller: 'products', action: 'edit', id: p %>
+    <%= link_to 'Eliminar', controller: 'products', action: 'delete', id: p %>
+</p>
+<% end %>
