@@ -1,12 +1,13 @@
 <h1>Products#index</h1>
 
+<%= link_to 'Agregar nuevo', new_product_path %>
 <% @products.each do |p| %>
 <p>
     <strong><%= p.name %></strong><br>
     <%= p.description %><br>
     <span>Precio: $<%= p.price %></span><br>
     <span>Stock disponible: <%= p.stock %> unidades</span><br>
-    <%= link_to "Editar", controller: 'products', action: 'edit', id: p %>
-    <%= link_to 'Eliminar', controller: 'products', action: 'delete', id: p %>
+    <%= link_to 'Editar', edit_product_path(p.id) %>
+    <%= link_to 'Eliminar', controller: 'products', action: 'destroy', method: :delete, id: p.id%>
 </p>
 <% end %>

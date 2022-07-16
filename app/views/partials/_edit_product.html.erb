@@ -1,0 +1,23 @@
+<%= form_with model: products do |f|%>
+    <%= f.hidden_field :id, value: @product.id %>
+    <%= f.label :name, 'Nombre:'%>              <br>
+    <%= f.text_field :name %>                   <br>
+    <%= f.label :description, 'Descripción:'%>  <br>
+    <%= f.text_area :description %>            <br>
+    <%= f.label :price, 'Precio:'%>             <br>
+    <%= f.text_field :price %>                  <br>
+    <%= f.label :stock, 'Stock disponible:'%>   <br>
+    <%= f.number_field :stock, id: 'stock'%>    <br>
+    <%= f.label :available, 'Disponible:'%>     <br>
+    <%= f.check_box :available, id: 'available' %><br>
+    <%= f.submit "Guardar"%>
+<% end %>
+
+<script>
+    var stock = document.getElementById('stock');
+    var available = document.getElementById('available');
+
+    stock.addEventListener('change', function () {
+        available.checked = (parseInt(stock.value) > 0)? true : false;
+    });
+</script>
