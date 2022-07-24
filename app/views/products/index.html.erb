@@ -8,6 +8,6 @@
     <span>Precio: $<%= p.price %></span><br>
     <span>Stock disponible: <%= p.stock %> unidades</span><br>
     <%= link_to 'Editar', edit_product_path(p.id) %>
-    <%= link_to 'Eliminar', controller: 'products', action: 'destroy', method: :delete, id: p.id%>
+    <%= link_to 'Eliminar', product_path(p), data: { turbo_method: :delete }%>
 </p>
 <% end %>
