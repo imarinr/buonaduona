@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  # store controller
   root 'store#index'
-  get '/cart', to: 'store#cart'
-  post '/cart', to: 'store#add_to_cart'
+
+  # store controller
+  get '/store/:id', to: 'store#show', as: 'detail'
 
   # product routes
   resources :products

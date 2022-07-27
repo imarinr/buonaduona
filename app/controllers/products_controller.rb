@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-    # render layout: 'layouts/backstage'
+    layout 'layouts/backstage'
 
     def index
         @products = Product.all

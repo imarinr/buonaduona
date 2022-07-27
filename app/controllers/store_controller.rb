@@ -4,6 +4,11 @@ class StoreController < ApplicationController
     @products = Product.all
   end
 
+  def show
+    @product = Product.find(params[:id])
+    @products = Product.where.not(id: params[:id])
+  end
+
   def cart
   end
 

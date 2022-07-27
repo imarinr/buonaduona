@@ -1,5 +1,20 @@
-<%= link_to 'Dashboard', '/' %>
-<%= link_to 'Productos', '/' %>
-<%= link_to 'Pedidos', '/' %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-<%= yield %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <title>Panel de administración</title>
+</head>
+<body>
+    <%= link_to 'Ir al sitio', '/' %>
+    <%= link_to 'Dashboard', '/' %>
+    <%= link_to 'Productos', '/' %>
+    <%= link_to 'Pedidos', '/' %>
+
+    <%= yield %>
+</body>
+</html>

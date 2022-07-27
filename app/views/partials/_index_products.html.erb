@@ -1,0 +1,8 @@
+<% @products.each do |p| %>
+<p>
+    <strong><%= p.name %></strong><br>
+    <%= p.description %><br>
+    <span>Precio: $<%= p.price %></span>
+    <%= link_to 'Comprar', detail_path(p.id) %>
+</p>
+<% end %>
