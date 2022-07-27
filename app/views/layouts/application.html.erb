@@ -15,6 +15,70 @@
   </head>
 
   <body>
+  <!-- Inicia navegación -->
+    <nav class="navbar   justify-content-end navbar-expand-lg">
+        <div class="container-fluid ">
+          <%= link_to root_path, class: "navbar-brand" do %>
+            <%= image_tag "logoBD.png", class: "logo d-none d-md-block d-lg-block d-xl-block" %>
+            <span class="letras d-block d-sm-block d-md-none d-lg-none d-xl-none">Buona Duona</span>
+          <% end %>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"><i class="bi bi-three-dots-vertical"></i></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
+              <li class="nav-item">
+                <%= link_to 'Home', root_path, class: 'nav-link active', aria: { current: 'page' } %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Repostería", not_implemented_path, class: 'nav-link' %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Café", not_implemented_path, class: 'nav-link' %>
+              </li>
+              
+              <li class="nav-item" type="submit" style="margin-right: 1em"> 
+                <%= link_to "Shopping bag", not_implemented_path, class: 'nav-link' %><i class="bi bi-bag-heart"></i>
+              </li> 
+              
+            
+              <li class="nav-item dropdown ml-5" type="submit"> 
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Cuenta <i class="bi bi-person-circle"></i></a>
+
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><%= link_to "Iniciar sesión", not_implemented_path, class: "dropdown-item text-black" %></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><%= link_to "Registrarse", not_implemented_path, class: "dropdown-item text-black" %></li>
+                  
+                  <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+                </ul>
+              </li> 
+            
+              
+              
+            </ul>
+            <%# <form class="d-flex" role="search">
+            
+             
+              
+              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Barra de búsqueda">
+              <button class="btn " type="submit"><i class="bi bi-search"></i></button>
+            </form> %>
+            <%= form_with url: not_implemented_path, class: 'd-flex', role:'search' do |f| %>
+                <%= f.search_field placeholder: "Buscar", class:"form-control me-2", aria: { label: "Barra de búsqueda" } %>
+                <%= f.submit '', class: 'btn' %><i class="bi bi-search"></i></button>
+            <%end%>
+          </div>
+        </div>
+      </nav>
+
+<!-- Fin de la navegación -->
+
     <%= yield %>
+
+    <footer>
+      <br><br>
+      <p class="pie-pagina">Derechos reservados</p>
+    </footer>
   </body>
 </html>
