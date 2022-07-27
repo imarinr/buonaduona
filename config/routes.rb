@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   # store controller
   get '/store/:id', to: 'store#show', as: 'detail'
+  get 'under_construction', to: 'store#under_construction', as: "not_implemented"
+
 
   # product routes
   resources :products
