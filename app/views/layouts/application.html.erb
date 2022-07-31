@@ -46,10 +46,13 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Cuenta <i class="bi bi-person-circle"></i></a>
 
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><%= link_to "Iniciar sesión", not_implemented_path, class: "dropdown-item text-black" %></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><%= link_to "Registrarse", not_implemented_path, class: "dropdown-item text-black" %></li>
-                  
+                  <% if user_signed_in? %>
+                    <li><%= link_to "Salir", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item text-black" %></li>
+                  <% else %>
+                    <li><%= link_to "Iniciar sesión", new_user_session_path, class: "dropdown-item text-black" %></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><%= link_to "Registrarse", new_user_registration_path, class: "dropdown-item text-black" %></li>
+                  <% end %>
                   <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
                 </ul>
               </li> 
@@ -65,8 +68,8 @@
               <button class="btn " type="submit"><i class="bi bi-search"></i></button>
             </form> %>
             <%= form_with url: not_implemented_path, class: 'd-flex', role:'search' do |f| %>
-                <%= f.search_field placeholder: "Buscar", class:"form-control me-2", aria: { label: "Barra de búsqueda" } %>
-                <%= f.submit '', class: 'btn' %><i class="bi bi-search"></i></button>
+                <%= f.search_field :product_name, placeholder: "Buscar", class:"form-control me-2", aria: { label: "Barra de búsqueda" } %>
+                <%= button_to '', class: 'btn' do %><i class="bi bi-search"></i><% end %>
             <%end%>
           </div>
         </div>
