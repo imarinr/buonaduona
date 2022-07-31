@@ -10,7 +10,7 @@ class StoreController < ApplicationController
   end
 
   def under_construction
-    render template: 'store/404', layout: false, status: :not_found
+    render file: 'public/404.html', layout: false, status: :not_found
   end
 
   def cart
