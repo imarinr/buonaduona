@@ -11,9 +11,9 @@ User.create(name:'invitado')
 
 Product.destroy_all
 Product.create ([
-    { name: 'Concha', description: 'Suave y con cubierta de chocolate', price: 10, stock: 30, available: true },
-    { name: 'Dona', description: 'Suave y con cubierta de chocolate', price: 10, stock: 30, available: true },
-    { name: 'Bolillo', description: 'Suave y combina con todo', price: 2, stock: 30, available: true },
-    { name: 'Rollo de piña', description: 'Pan de ojaldre dorado y con relleno de piña natural', price: 10, stock: 30, available: true },
-    { name: 'Rol de canela', description: 'Suavidad y sabor que a todos encanta', price: 10, stock: 30, available: true },
+    { name: 'Volcán de chocolate', description: 'bizcocho de sabor intenso', price: 18, stock: 30, available: true, category: 1 },
+    { name: 'Muffin de chocolate salvaje', description: 'irresistible', price: 20, stock: 30, available: true, category: 1 },
+    { name: 'Tarta de chocolate y frambuesas exóticas', description: '', price: 20, stock: 30, available: true, category: 1 },
+    { name: 'Café de grano', description: 'El mejor café, ahora a tu alcance', price: 50, stock: 30, available: true, category: 2 },
+    { name: 'Café insantáneo', description: 'Suave aroma para cada día', price: 18, stock: 30, available: true, category: 2 },
 ])
