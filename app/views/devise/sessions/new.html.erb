@@ -1,26 +1,58 @@
-<h2>Log in</h2>
+<main>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  <div class="card  w-100 container-fluid ">
+    <div class="row g-0">
+      <div class="col-md-7">
+        <%# <img src="img/sesion.jpg" class="img-fluid  d-none d-md-block d-lg-block d-xl-block" alt="..."> %>
+        <%= image_tag 'sesion.jpg' , class:'img-fluid d-none d-md-block d-lg-block d-xl-block', alt: '...' %>
+        <%# <img src="img/sesion-sm.jpg" class="img-fluid  d-block d-sm-block d-md-none d-lg-none d-xl-none" alt="..."> %>
+        <%= image_tag 'sesion-sm.jpg' , class: 'img-fluid  d-block d-sm-block d-md-none d-lg-none d-xl-none', alt: '...' %>
+      </div>
+      <div class="col-md-5">
+        <div class="card-body">
+          <h5 class="card-title m-3">Iniciar sesión<br></h5><br>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name),
+            class: 'row g-4 needs-validation m-5' ) do |f| %>
+            <div class="col-md-12">
+              <%= f.label :email, class:'col-sm-2 col-form-label'%>
+              <div class="col-sm-12">
+                <%= f.email_field :email, autofocus: true, autocomplete: "email" , class:'form-control' %>
+              </div>
+            </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+            <div class="col-md-12">
+              <%= f.label :password, class: 'col-sm2 col-form-label' %>
+                <div class="col-sm-12">
+                  <%= f.password_field :password, autocomplete: "current-password" , class: 'form-control' %>
+                </div>
+            </div>
+
+            <hr class='dropdown-divider mt-5'>
+            <br>
+
+            <% if devise_mapping.rememberable? %>
+              <div class="field">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me, 'Recordarme' %>
+              </div>
+            <% end %>
+
+            <div class="col-sm-6 mr-3">
+              <%= link_to '¿Aún no tienes una cuenta?' , new_user_registration_path, style: "text-decoration: none;" %>
+            </div>
+
+            <div class="col-sm-6 ml-3">
+              <%= link_to 'Olvidé mi contraseña' , new_user_password_path, style: "text-decoration: none;" %>
+            </div>
+
+            <div class="col-md-12 col-sm-6 d-grid gap-2 d-block">
+              <%= f.submit "Iniciar" , class: 'btn btn-dark btn-lg' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+</main>

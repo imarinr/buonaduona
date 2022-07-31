@@ -1,38 +1,100 @@
-<h2>Registrarse en Buona Duona</h2>
+<main>
+        <div class="card  w-100  container-fluid" >
+            <div class="row g-0">
+              <div class="col-md-7">
+                <%# <img src="img/registro.jpg" class="img-fluid  d-none d-md-block d-lg-block d-xl-block" alt="..."> %>
+                <%= image_tag 'registro.jpg', class: 'img-fluid  d-none d-md-block d-lg-block d-xl-block', alt: '...' %>
+                <%# <img src="img/registro-sm.jpg" class="img-fluid  d-block d-sm-block d-md-none d-lg-none d-xl-none" alt="..."> %>
+                <%= image_tag 'registro-sm.jpg', class: 'img-fluid  d-block d-sm-block d-md-none d-lg-none d-xl-none' %>
+              </div>
+              <div class="col-md-5">
+                <div class="card-body">
+                  <h5 class="card-title m-3">Resgístrate<br></h5><br>
+                  <%# <form class="row g-4 needs-validation m-5" novalidate> %>
+                      <%# <label for="validationCustom01" class="form-label">Nombre</label> %>
+                      <%# <input type="text" class="form-control" id="validationCustom01" value="Mark" required> %>
+                      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: 'row g-4 needs-validation m-5') do |f| %>
+                        <%= render "devise/shared/error_messages", resource: resource %>
+                        <div class="col-md-12">
+                          <%= f.label :name, 'Nombre', class: 'form-label' %><br />
+                          <%= f.text_field :name, required:'required', class: 'form-control' %>
+                          <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                        </div>
+                    <div class="col-md-12">
+                      <%# <label for="validationCustom02" class="form-label">Apellido</label> %>
+                      <%# <input type="text" class="form-control" id="validationCustom02" value="Otto" required> %>
+                      <%= f.label :last_name, 'Apellidos', class: 'form-label' %><br />
+                      <%= f.text_field :last_name, class: 'form-control' %>
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                        <%# <label for="inputEmail3" class="form-label">Email</label> %>
+                        <%= f.label :email, class: 'form-label' %>
+                        <div class="col-sm-12">
+                          <%# <input type="email" class="form-control" id="inputEmail3"> %>
+                          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <%# <label for="inputPassword3" class="form-label">Contraseña</label> %>
+                        <%= f.label :password, 'Contraseña', class: 'form-label' %>
+                        <% if @minimum_password_length %>
+                        <em>(<%= @minimum_password_length %> characters minimum)</em>
+                        <% end %>
+                        <div class="col-sm-12">
+                          <%# <input type="password" class="form-control" id="inputPassword3"> %>
+                          <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <%# <label for="inputPassword3 confirmar" class="form-label">Confirmar contaseña</label> %>
+                        <%= f.label :password_confirmation, 'Confirmar contraseña', class: 'form-label' %>
+                        <div class="col-sm-12">
+                          <%# <input type="password" class="form-control" id="inputPassword3"> %>
+                          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
+                        </div>
+                    </div>
+                   
+                    <div class="col-md-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Acepto términos y condiciones
+                        </label>
+                        <div class="invalid-feedback">
+                          Debes aceptar términos y condiciones antes de registarte
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-sm-6 d-grid gap-2 d-block ">
+                      <%# <button class="btn btn-dark btn-lg" type="submit">Registrase</button> %>
+                      <%= f.submit "Registrarse", class: 'btn btn-dark btn-lg' %>
+                    </div>
+                  <%# </form> %>
+                  <% end %>
+                  
+                  
+                 
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-  <div class="field">
-    <%= f.label :name, 'Nombre' %><br />
-    <%= f.text_field :name %>
-  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </main>
+
+<%#  %>
+ <%#
 
   <div class="field">
-    <%= f.label :last_name, 'Apellidos' %><br />
-    <%= f.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password, 'Contraseña' %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, 'Confirmar contraseña' %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
   </div>
-<% end %>
+<% end %> %>
 
 <%= render "devise/shared/links" %>
