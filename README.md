@@ -50,3 +50,11 @@ Si todo salio bien, podrá visualizar el sitio en la dirección https://localhos
 
 El sitio, hasta el momento de su publicación, se encuentra apenas con unas cuantas características implementadas tales como:
 * Catálogo de productos
+* Posibilidad de registrarse como usuario e iniciar sesión en la página
+* Editar productos (Agregar nuevos, eliminar, etc.)
+
+Por implementar:
+* Acceso restringido a diferentes secciones de la página (autorización)
+* Panel de control del usuario administrador
+* Editor de banners de promociones
+* Carrito de compras y todo lo que implique
