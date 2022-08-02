@@ -1,24 +1,22 @@
-# README
+# Buona Duona
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este, es el proyecto terminal del bootcamp Rails de Código facilito.
 
-Things you may want to cover:
+## Overview
+Se trata de un sitio web para el que aun me encuentro implementando el back-end.
 
-* Ruby version
+En este sitio, se cuenta con una tienda e-commerce de venta de repostería y café en línea.
 
-* System dependencies
+## Acknowledgments
 
-* Configuration
+Agradecimiento a [Brenda Marín](https://github.com/BrendaMarinR) por el diseño y maquetación de las pantallas.
 
-* Database creation
+## Getting started
 
-* Database initialization
+Este proyecto se desarrolló con ruby 3.0.1 en Windows con `ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [x64-mingw-ucrt]` instalado mediante RubyInstaller + DevKit y `Rails 7.0.3.1` ( [Instrucciones de intstalación](https://medium.com/@declancronje/installing-and-troubleshooting-ruby-on-rails-sqlite3-windows-10-fix-87c8886d03b) ).
 
-* How to run the test suite
+Para obtener los archivos del repositorio descargue el zip de la rama master desde esta página u obtengalo mediante la herramienta Git con el comando `git clone https://github.com/imarinr/buonaduona.git`.
 
-* Services (job queues, cache servers, search engines, etc.)
+Una vez descargado el proyecto...
 
-* Deployment instructions
 
-* ...
