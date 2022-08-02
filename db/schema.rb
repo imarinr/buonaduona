@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_31_143029) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_01_015138) do
+  create_table "banner_elems", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.integer "product_id", null: false
+    t.string "image_path"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_banner_elems_on_product_id"
+  end
+
   create_table "order_products", force: :cascade do |t|
     t.integer "order_id", null: false
     t.integer "product_id", null: false
@@ -58,10 +68,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_31_143029) do
     t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "role", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "banner_elems", "products"
   add_foreign_key "order_products", "orders"
   add_foreign_key "order_products", "products"
 end

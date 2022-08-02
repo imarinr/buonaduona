@@ -5,4 +5,16 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :orders
+
+  enum role: {
+    guest: 0,
+    client: 1,
+    admin: 2
+  }
+
+  after_initialize do
+    if self.new_record?
+      self.role ||= :guest
+    end
+  end
 end
