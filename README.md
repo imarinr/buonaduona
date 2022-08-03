@@ -13,6 +13,10 @@ Agradecimiento a [Brenda Marín](https://github.com/BrendaMarinR) por el diseño
 
 ## Getting started
 
+Para ver el sitio en un entorno de producción visite el siguiente [enlace](https://buona-duona-imr.herokuapp.com/).
+
+Para ejecutar el proyecto en una PC, siga los siguientes pasos:
+
 Este proyecto se desarrolló con:
 *  Ruby 3.0.1 en Windows con `ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [x64-mingw-ucrt]` instalado mediante [RubyInstaller + DevKit](https://rubyinstaller.org/downloads/)
 * `Rails 7.0.3.1` ( [Instrucciones de intstalación](https://medium.com/@declancronje/installing-and-troubleshooting-ruby-on-rails-sqlite3-windows-10-fix-87c8886d03b) ).
