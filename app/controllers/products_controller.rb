@@ -1,9 +1,10 @@
 class ProductsController < ApplicationController
-
+    before_action :authenticate_user!
     layout 'layouts/backstage'
 
     def index
         @products = Product.all
+        authorize Product
     end
 
     def new
