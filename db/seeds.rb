@@ -7,7 +7,10 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 User.destroy_all
-User.create(name:'invitado')
+User.create([
+    { name: 'Admin', last_name: 'none', email: 'admin@buonaduona.com', password: 'bd_root2022', role: 'admin' }, # usuario administrador
+    { name: 'Admin', last_name: 'none', email: 'admin@buonaduona.com', password: 'bd_root2022' } # usuario normal
+])
 
 Product.destroy_all
 Product.create ([
