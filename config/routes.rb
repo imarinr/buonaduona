@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   get 'under_construction', to: 'store#under_construction', as: "not_implemented"
 
 
+  # Dashboard
+  get '/dashboard/index', to: 'dashboard#index', as: 'dashboard'
+
   # product routes
   resources :products
   
