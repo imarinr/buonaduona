@@ -9,7 +9,7 @@
 User.destroy_all
 User.create([
     { name: 'Admin', last_name: 'none', email: 'admin@buonaduona.com', password: 'bd_root2022', role: 'admin' }, # usuario administrador
-    { name: 'Admin', last_name: 'none', email: 'admin@buonaduona.com', password: 'bd_root2022' } # usuario normal
+    { name: 'client', last_name: 'none', email: 'client@buonaduona.com', password: 'bd_cli2022' } # usuario normal
 ])
 
 Product.destroy_all
