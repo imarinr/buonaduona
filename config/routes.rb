@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
 
   # Dashboard
-  get '/dashboard/index', to: 'dashboard#index', as: 'dashboard'
+  get '/dashboard', to: 'dashboard#index', as: 'dashboard'
 
   # product routes
   resources :products
